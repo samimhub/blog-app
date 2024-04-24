@@ -1,10 +1,15 @@
-import React from 'react'
-
+import { Navbar } from 'flowbite-react'
+import {Link} from 'next/link'
 function page() {
   return (
-    <div>
-      home
-    </div>
+    <Navbar className='border-b-2'>
+       <Link href="/" className=''>
+        <span>
+            Next
+        </span>
+        Blog
+       </Link>
+    </Navbar>
   )
 }
 
