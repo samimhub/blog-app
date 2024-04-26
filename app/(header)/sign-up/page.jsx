@@ -1,12 +1,17 @@
+"use client"
+
 import { Button, Label, TextInput } from "flowbite-react"
 import Link from "next/link"
 
 function page() {
+  const handleChange =(e)=>{
+    console.log(e.target.value);
+  }
   return (
     <div className='min-h-screen mt-20 '>
-      <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-8'>
+      <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-6'>
         {/* Left */}
-        <div className=''>
+        <div className='flex-1'>
         <Link href='/' className='font-bold text-4xl dark:text-white'>
           <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 
           via-purple-500 to-pink-500 rounded-lg text-white'>Next</span>
@@ -17,19 +22,19 @@ function page() {
         </p>
         </div>
         {/*Right */}
-        <div className=''>
-          <form>
-            <div className="">
+        <div className='flex-1'>
+          <form className="flex flex-col gap-4">
+            <div>
             <Label value='Your Username'/>
-            <TextInput type='text' placeholder="Username" id="username"/>
+            <TextInput type='text' placeholder="Username" id="username" onChange={handleChange} autoComplete="off"/>
             </div>
-            <div className="">
+            <div>
             <Label value='Your Email'/>
-            <TextInput type='text' placeholder="Email" id="email"/>
+            <TextInput type='email' placeholder="users@gmail.com" id="email" onChange={handleChange} autoComplete="off"/>
             </div>
-            <div className="">
+            <div>
             <Label value='Your Password'/>
-            <TextInput type='text' placeholder="users@gmail.com" id="password"/>
+            <TextInput type='password' placeholder="Password" id="password" onChange={handleChange}/>
             </div>
             <Button gradientDuoTone='purpleToPink' type="submit">
               Sign Up 
